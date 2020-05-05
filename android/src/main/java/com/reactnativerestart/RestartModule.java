@@ -48,13 +48,13 @@ public class RestartModule extends ReactContextBaseJavaModule {
                 public void run() {
                     try {
                         instanceManager.recreateReactContextInBackground();
-                    } catch (Exception e) {
+                    } catch (Throwable e) {
                         loadBundleLegacy();
                     }
                 }
             });
 
-        } catch (Exception e) {
+        } catch (Throwable e) {
             loadBundleLegacy();
         }
     }
